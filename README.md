@@ -10,11 +10,14 @@ Seiten anzeigen:
 * Login
 * SCSS.php
 
-Skripte:
+Includes:
+head.php
+footer.php
+mysql.php
 
+Skripte:
 * Checklisten/Klassen/Schüler Neu/Bearbeiten/Löschen
-* HEAD.php
-* MySQL Verbindung
+* Login Skript
 
 
 

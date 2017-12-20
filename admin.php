@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-	</head>
-	<body>
+<?php include 'include/head.php'; ?>
 
-	</body>
-</html>
+
+
+<?php include 'include/footer.php'; ?>
