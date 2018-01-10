@@ -1,0 +1,39 @@
+/* compiled by scssphp v0.0.12 on Wed, 10 Jan 2018 12:04:21 +0100 (0.0414s) */
+
+ul.oberleiste {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333; }
+
+ul li {
+  float: left; }
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none; }
+
+li.dropdown {
+  display: inline-block; }
+
+.dropdown-inhalt {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9; }
+  .dropdown-inhalt a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    border: 1px solid; }
+    .dropdown-inhalt a:hover .dropdown-inhalt {
+      display: block; }
