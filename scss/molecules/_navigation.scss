@@ -3,43 +3,39 @@ ul.oberleiste {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
     background-color: #333;
-}
+		width: 100%;
 
-ul li {
-    float: left;
-}
-li a, .dropbtn {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-li.dropdown {
-    display: inline-block;
-}
+		li a, .dropdown {
+		    color: white;
+		    text-align: center;
+		    padding: 10px 10px;
+		    text-decoration: none;
+				position: relative;
+				display: inline-block;
 
-.dropdown-inhalt {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-
-		a {
-			color: black;
-			padding: 12px 16px;
-			text-decoration: none;
-			display: block;
-			text-align: left;
-			border: 1px solid;
-
-			&:hover .dropdown-inhalt {
-			    display: block;
-			}
+				&:hover .dropdown-inhalt {
+				    display: block;
+				}
 		}
+
+		.dropdown-inhalt {
+		    display: none;
+		    position: absolute;
+				top: 100%;
+				left: 0;
+		    background-color: #f9f9f9;
+				transition: all 0.3s ease-in-out;
+
+				a {
+					color: black;
+					padding: 12px 16px;
+					text-decoration: none;
+					display: block;
+					text-align: left;
+					border: 1px solid;
+
+				}
+		}
+
 }

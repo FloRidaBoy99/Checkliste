@@ -1,39 +1,31 @@
-/* compiled by scssphp v0.0.12 on Wed, 10 Jan 2018 12:04:21 +0100 (0.0414s) */
+/* compiled by scssphp v0.0.12 on Wed, 10 Jan 2018 12:20:15 +0100 (0.0101s) */
 
 ul.oberleiste {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333; }
-
-ul li {
-  float: left; }
-
-li a, .dropbtn {
-  display: inline-block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none; }
-
-li.dropdown {
-  display: inline-block; }
-
-.dropdown-inhalt {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9; }
-  .dropdown-inhalt a {
-    color: black;
-    padding: 12px 16px;
+  background-color: #333;
+  width: 100%; }
+  ul.oberleiste li a, ul.oberleiste .dropdown {
+    color: white;
+    text-align: center;
+    padding: 10px 10px;
     text-decoration: none;
-    display: block;
-    text-align: left;
-    border: 1px solid; }
-    .dropdown-inhalt a:hover .dropdown-inhalt {
+    position: relative;
+    display: inline-block; }
+    ul.oberleiste li a:hover .dropdown-inhalt, ul.oberleiste .dropdown:hover .dropdown-inhalt {
       display: block; }
+  ul.oberleiste .dropdown-inhalt {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease-in-out; }
+    ul.oberleiste .dropdown-inhalt a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+      border: 1px solid; }
