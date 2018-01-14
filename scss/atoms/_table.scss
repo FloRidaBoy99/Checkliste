@@ -1,0 +1,16 @@
+$table-border: 1px solid grey;
+
+table {
+	border-collapse: collapse;
+	border: $table-border;
+
+	td, th {
+		border: $table-border;
+		padding: 5px 25px;
+	}
+	td {
+		&:first-of-type {
+			text-align: center;
+		}
+	}
+}

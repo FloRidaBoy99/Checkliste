@@ -1,27 +1,43 @@
-/* compiled by scssphp v0.0.12 on Wed, 10 Jan 2018 12:20:15 +0100 (0.0101s) */
+/* compiled by scssphp v0.0.12 on Sun, 14 Jan 2018 18:09:59 +0100 (0.021s) */
+
+table {
+  border-collapse: collapse;
+  border: 1px solid grey; }
+  table td, table th {
+    border: 1px solid grey;
+    padding: 5px 25px; }
+  table td:first-of-type {
+    text-align: center; }
 
 ul.oberleiste {
   list-style-type: none;
   margin: 0;
   padding: 0;
   background-color: #333;
-  width: 100%; }
-  ul.oberleiste li a, ul.oberleiste .dropdown {
+  width: 100%;
+  position: relative; }
+  ul.oberleiste li a, ul.oberleiste li {
     color: white;
     text-align: center;
     padding: 10px 10px;
     text-decoration: none;
     position: relative;
     display: inline-block; }
-    ul.oberleiste li a:hover .dropdown-inhalt, ul.oberleiste .dropdown:hover .dropdown-inhalt {
-      display: block; }
+    ul.oberleiste li a:hover .dropdown-inhalt, ul.oberleiste li:hover .dropdown-inhalt {
+      opacity: 1;
+      visibility: visible; }
+  ul.oberleiste .logout {
+    position: absolute;
+    top: 0;
+    right: 0; }
   ul.oberleiste .dropdown-inhalt {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
     position: absolute;
     top: 100%;
     left: 0;
     background-color: #f9f9f9;
-    transition: all 0.3s ease-in-out; }
+    transition: all 0.2s ease-in-out; }
     ul.oberleiste .dropdown-inhalt a {
       color: black;
       padding: 12px 16px;

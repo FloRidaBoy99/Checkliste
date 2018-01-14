@@ -5,8 +5,9 @@ ul.oberleiste {
     padding: 0;
     background-color: #333;
 		width: 100%;
+		position: relative;
 
-		li a, .dropdown {
+		li a, li {
 		    color: white;
 		    text-align: center;
 		    padding: 10px 10px;
@@ -15,27 +16,34 @@ ul.oberleiste {
 				display: inline-block;
 
 				&:hover .dropdown-inhalt {
-				    display: block;
+					opacity: 1;
+					visibility: visible;
 				}
 		}
 
+		.logout {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
 		.dropdown-inhalt {
-		    display: none;
-		    position: absolute;
-				top: 100%;
-				left: 0;
-		    background-color: #f9f9f9;
-				transition: all 0.3s ease-in-out;
+			opacity: 0;
+			visibility: hidden;
+	    position: absolute;
+			top: 100%;
+			left: 0;
+	    background-color: #f9f9f9;
+			transition: all 0.2s ease-in-out;
 
-				a {
-					color: black;
-					padding: 12px 16px;
-					text-decoration: none;
-					display: block;
-					text-align: left;
-					border: 1px solid;
-
-				}
+			a {
+				color: black;
+				padding: 12px 16px;
+				text-decoration: none;
+				display: block;
+				text-align: left;
+				border: 1px solid;
+			}
 		}
 
 }

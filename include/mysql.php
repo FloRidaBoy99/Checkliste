@@ -4,18 +4,34 @@
 	{
 		private $verbindung;
 
-		function __construct($options)
-		{
+		function __construct($options) {
 			$this -> verbindung = new mysqli($options["servername"], $options["username"], $options["password"], $options["dbname"]);
 			if ($this -> verbindung ->connect_error) {
 			    die("Die MySQL Verbindung funzt net: " . $this -> verbindung -> connect_error);
 			}
 		}
 
-		public function query($queryString = '')
-		{
+		public function query($queryString = '') {
 			$erg = $this -> verbindung -> query($queryString);
 			return $erg;
+		}
+
+		public function checkLogin($data) {
+			if (empty($data)) { return false; }
+
+			$sql = "SELECT * FROM lehrer WHERE lehrerid = ".$data["lehrerid"]." AND passwort = '".$data["passwort"]."' AND kuerzel = '".$data["kuerzel"]."'";
+			$result = $this -> verbindung -> query($sql);
+
+			if ($result !== NULL && $result -> num_rows === 1) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		public function getID()
+		{
+			return $this -> verbindung -> insert_id;
 		}
 	}
 
