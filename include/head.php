@@ -10,6 +10,7 @@
 		<title>Checkliste</title>
 	</head>
 	<body>
+		<?php print_r($_SESSION); if ($_SERVER["PHP_SELF"] !== "/Checkliste/login.php") : ?>
 		<ul class="oberleiste">
 		  <li class="dropdown">
 		    <a href="checklisten_uebersicht.php">Checklisten-Übersicht</a>
@@ -28,3 +29,4 @@
 		    <a href="klasse-uebersicht.php">Klassen anzeigen</a>
 		  </li>
 		</ul>
+	<?php endif; ?>

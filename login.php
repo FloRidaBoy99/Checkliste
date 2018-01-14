@@ -2,16 +2,22 @@
 
 <h1>Anmeldung - Checkliste</h1>
 
+	<?php if(!empty($_GET["msg"])) : ?>
+		<div class="alert">
+			<?php echo $_GET["msg"]; ?>
+		</div>
+	<?php endif; ?>
+
 <form action="skripte/login.php" method="post">
-	
+
 	<label>
-		Name:
-		<input type="text" name="username">
+		Kürzel:
+		<input type="text" name="kuerzel">
 	</label>
 
 	<label>
 		Passwort:
-		<input type="password" name="password">
+		<input type="password" name="passwort">
 	</label>
 
 	<input type="submit" value="Absenden">
