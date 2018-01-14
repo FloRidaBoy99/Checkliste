@@ -3,17 +3,16 @@
 	include 'include/mysql.php';
 
 	if ($db -> checkLogin($_SESSION)) :
+		$id = $_GET["id"];
 
-		$schueler_sql = 'SELECT
-			s.schulerid,
-			s.vorname,
-			s.nachname,
-			s.geburtsdatum,
-			k.bezeichnung
-			FROM
-			schueler s LEFT JOIN klasse k
-			ON s.klasse = k.klasseid';
-		$schueler = $db -> query($schueler_sql);
+		$schueler_sql = "SELECT * FROM schueler WHERE schuelerid = $id";
+		$schuelerResult = $db -> query($schueler_sql);
+		$schueler = $schuelerResult -> fetch_assoc();
+
+		print_r($schueler);
+
+		$klasse_sql = "SELECT klasseid, bezeichnung FROM klasse ORDER BY bezeichnung ASC";
+		$klasse = $db -> query($klasse_sql);
 	else :
 		header("Location:login.php?msg=".urlencode("Fehler: Sie sind nicht eingeloggt"));
 		exit;
@@ -23,27 +22,37 @@
 <div class="content">
 	<h1>Schüler</h1>
 
-	<?php if ($schueler -> num_rows > 0): ?>
-		<table>
-			<tr>
-				<th>Nr.</th>
-				<td>Nachname</td>
-				<td>Vorname</td>
-				<td>Geburtsdatum</td>
-				<td>Klasse</td>
-			</tr>
-			<?php $i = 0; while ($row = $schueler -> fetch_assoc()) : ?>
-				<tr>
-					<td><?php echo $i; $i++; ?></td>
-					<td><?php echo $row["nachname"]; ?></td>
-					<td><?php echo $row["vorname"]; ?></td>
-					<td><?php echo $row["geburtsdatum"]; ?></td>
-					<td><?php echo $row["bezeichnung"]; ?></td>
-				</tr>
-			<?php endwhile; ?>
-		</table>
-	<?php endif; ?>
 
+
+	<h1>Schüler bearbeiten</h1>
+	<form action="skripte/schueler_bearbeiten.php" method="post">
+		<label>
+			Vorname:
+			<input type="text" name="vorname" value="<?php echo $schueler["Vorname"]; ?>">
+		</label>
+		<label>
+			Nachname:
+			<input type="text" name="nachname" value="<?php echo $schueler["Nachname"]; ?>">
+		</label>
+		<label>
+			Geburtsdatum:
+			<input type="date" name="geburtsdatum" value="<?php echo $schueler["Geburtsdatum"]; ?>">
+		</label>
+
+		<label>
+			Klasse:
+			<select name="klasse">
+				<option value="" selected disabled>Wählen Sie eine Klasse aus</option>
+				<?php while($row = $klasse -> fetch_assoc()) : ?>
+					<option value="<?php echo $row["klasseid"]; ?>"
+						<?php if ($row["klasseid"] === $schueler["Klasse"]) echo " selected"; ?>
+					><?php echo $row["bezeichnung"]; ?></option>
+				<?php endwhile; ?>
+			</select>
+		</label>
+		<input type="hidden" name="schuelerid" value="<?php echo $schueler["SchuelerID"]; ?>">
+		<input type="submit" value="Absenden">
+	</form>
 </div>
 
 

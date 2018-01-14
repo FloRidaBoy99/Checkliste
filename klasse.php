@@ -50,17 +50,18 @@
 
 		<label>
 			Klassensprecher:
-			<select name="klassenlehrer">
+			<select name="klassensprecher">
 				<option value="" selected disabled>Wählen Sie einen Schüler aus</option>
 				<?php while($row = $schueler -> fetch_assoc()) : ?>
 
 					<option value="<?php echo $row["schuelerid"]; ?>"
-						<?php if ($klasse["istklassensprecher"] === $row["schuelerid"]) echo " selected";?>
+						<?php if ($klasse["istKlassensprecher"] === $row["schuelerid"]) echo " selected";?>
 					><?php echo $row["vorname"]." ".$row["nachname"]; ?></option>
 
 				<?php endwhile; ?>
 			</select>
 		</label>
+		<input type="hidden" name="klasseid" value="<?php echo $klasse["KlasseID"]; ?>">
 		<input type="submit" value="Absenden">
 	</form>
 
