@@ -5,7 +5,7 @@
 	if ($db -> checkLogin($_SESSION)) :
 
 		$schueler_sql = 'SELECT
-			s.schulerid,
+			s.schuelerid,
 			s.vorname,
 			s.nachname,
 			s.geburtsdatum,
@@ -21,7 +21,7 @@
 ?>
 
 <div class="content">
-	<h1>Schüler</h1>
+	<h1>Alle Schüler</h1>
 
 	<?php if ($schueler -> num_rows > 0): ?>
 		<table>
@@ -32,9 +32,13 @@
 				<td>Geburtsdatum</td>
 				<td>Klasse</td>
 			</tr>
-			<?php $i = 0; while ($row = $schueler -> fetch_assoc()) : ?>
+			<?php $i = 1; while ($row = $schueler -> fetch_assoc()) : ?>
 				<tr>
-					<td><?php echo $i; $i++; ?></td>
+					<td>
+						<a href="schueler.php?id=<?php echo $row["schuelerid"]; ?>">
+							<?php echo $i; $i++; ?>
+						</a>
+					</td>
 					<td><?php echo $row["nachname"]; ?></td>
 					<td><?php echo $row["vorname"]; ?></td>
 					<td><?php echo $row["geburtsdatum"]; ?></td>
