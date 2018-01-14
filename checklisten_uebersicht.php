@@ -6,10 +6,21 @@
 		header("Location:login.php?msg=".urlencode("Fehler: Sie sind nicht eingeloggt"));
 		exit;
 	endif;
-	
-	$sql = "SELECT * FROM checkliste";
 
-	$checklisten = $db -> query($sql);
+	$checklisten_sql = "SELECT
+	c.checklisteid,
+	c.titel,
+	c.erstelldatum,
+	c.deadline,
+	k.bezeichnung,
+	IF(status = 0, 'Noch nicht fertig', 'Fertig') AS status
+	FROM checkliste c INNER JOIN klasse k
+	ON c.klasse = k.klasseid;";
+
+	$checklisten = $db -> query($checklisten_sql);
+
+	print_r($checklisten);
+
 ?>
 	<h1>Alle Checklisten</h1>
 
@@ -23,17 +34,21 @@
 					<th>Deadline</th>
 					<th>Status</th>
 				</tr>
-				<?php $i = 0;
+				<?php $i = 1;
 					while ($row = $checklisten -> fetch_assoc()) :
 				?>
 				<tr>
-					<td><?php echo $i; ?></td>
-					<td><?php echo $row["titel"]; ?></td>
+					<td><?php echo $i; $i++; ?></td>
+					<td>
+						<a href="checkliste.php?id=<?php echo $row["checklisteid"]; ?>">
+							<?php echo $row["titel"]; ?>
+						</a>
+					</td>
 					<td><?php echo $row["erstelldatum"]; ?></td>
 					<td><?php echo $row["deadline"]; ?></td>
 					<td><?php echo $row["status"]; ?></td>
 				</tr>
-			<?php	$i++; endwhile; ?>
+			<?php endwhile; ?>
 			</table>
 		<?php endif; ?>
 	</div>

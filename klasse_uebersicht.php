@@ -32,7 +32,7 @@
 			<th>Klassenlehrer</th>
 		</tr>
 			<?php
-				$i = 0;
+				$i = 1;
 				while($row = $klasse -> fetch_assoc()):
 			?>
 				<tr>
