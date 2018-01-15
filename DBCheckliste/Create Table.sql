@@ -27,7 +27,7 @@ Vorname VARCHAR(30),
 Nachname VARCHAR(30),
 Kuerzel VARCHAR(4),
 Passwort VARCHAR(40),
-ADMIN bool DEFAULT 0,
+Admin bool DEFAULT 0,
 PRIMARY KEY(LehrerID)
 )ENGINE=InnoDB;
 

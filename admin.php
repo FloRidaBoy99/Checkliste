@@ -2,8 +2,13 @@
 	include 'include/head.php';
 	include 'include/mysql.php';
 
-	$lehrer_sql = "SELECT lehrerid, vorname, nachname, kuerzel FROM lehrer";
-	$lehrer = $db -> query($lehrer_sql);
+	if ($db -> checkLogin($_SESSION) && $_SESSION["admin"] === "1") {
+		$lehrer_sql = "SELECT lehrerid, vorname, nachname, kuerzel FROM lehrer";
+		$lehrer = $db -> query($lehrer_sql);
+	} else {
+		header("Location:checklisten_uebersicht.php?msg=".urlencode("Fehler: Sie besitzen nicht die nötigen Rechte"));
+	}
+
 ?>
 
 	<div class="content">

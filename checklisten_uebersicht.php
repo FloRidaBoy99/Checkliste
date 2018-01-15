@@ -22,6 +22,12 @@
 	print_r($checklisten);
 
 ?>
+	<?php if (!empty($_GET["msg"])): ?>
+		<div class="alert">
+			<?php echo $_GET["msg"]; ?>
+		</div>
+	<?php endif; ?>
+
 	<h1>Alle Checklisten</h1>
 
 	<div class="content">

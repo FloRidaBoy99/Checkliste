@@ -5,14 +5,15 @@
 	$kuerzel = $_POST["kuerzel"];
 	$passwort = $_POST["passwort"];
 
-	$erg = $db -> query("SELECT lehrerid, kuerzel, passwort FROM lehrer WHERE kuerzel = '$kuerzel' AND passwort = '$passwort'");
+	$lehrer = $db -> query("SELECT lehrerid, kuerzel, passwort, admin FROM lehrer WHERE kuerzel = '$kuerzel' AND passwort = '$passwort'");
 
-	if ($erg -> num_rows === 1) {
-		$user = $erg -> fetch_assoc();
+	if ($lehrer -> num_rows === 1) {
+		$user = $lehrer -> fetch_assoc();
 
 		$_SESSION["kuerzel"] = $user["kuerzel"];
 		$_SESSION["lehrerid"] = $user["lehrerid"];
 		$_SESSION["passwort"] = $user["passwort"];
+		$_SESSION["admin"] = $user["admin"];
 		header("Location:../index.php");
 
 	} else {

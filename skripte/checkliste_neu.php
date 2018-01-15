@@ -35,7 +35,7 @@
 			$eintrag = $db -> query($eintrag_sql);
 		}
 
-		// header("Location:../checkliste.php?id=".$checklisteid);
+		header("Location:../checkliste.php?id=".$checklisteid);
 	}
 
 ?>

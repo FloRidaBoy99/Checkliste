@@ -7,7 +7,7 @@
 
 		$eintrag_sql = "SELECT
 				e.checklisteneintragid,
-				e.abgeharkt,
+				e.abgehakt,
 				CONCAT(s.vorname, ' ', s.nachname) AS schueler,
 				s.schuelerid
 			FROM
@@ -16,7 +16,7 @@
 			WHERE e.checkliste = $id";
 		$eintrag = $db -> query($eintrag_sql);
 
-		$checkliste_sql = "SELECT * FROM checklisteneintrag WHERE checkliste = $id";
+		$checkliste_sql = "SELECT * FROM checkliste WHERE checklisteid = $id";
 		$checklisteResult = $db -> query($checkliste_sql);
 		$checkliste = $checklisteResult -> fetch_assoc();
 
@@ -29,7 +29,7 @@
 ?>
 
 <div class="content">
-	<h1>Alle Checklisteneinträge</h1>
+	<h1>Checkliste: <?php echo $checkliste["Titel"]; ?></h1>
 
 	<?php if ($eintrag -> num_rows > 0): ?>
 		<form action="skripte/checkliste_speichern.php" method="post">
@@ -45,8 +45,8 @@
 						<tr>
 							<td><?php echo $i; $i++; ?></td>
 							<td>
-								<input type="checkbox" name="abgehakt[<?php echo $row["schuelerid"]; ?>]"
-									<?php if ($row["abgeharkt"]) { echo " checked"; } ?>
+								<input type="checkbox" name="abgehakt[<?php echo $row["checklisteneintragid"]; ?>]"
+									<?php if ($row["abgehakt"]) { echo " checked"; } ?>
 								>
 							</td>
 
@@ -72,14 +72,14 @@
 	<form action="skripte/checkliste_bearbeiten.php" method="post">
 		<label>
 			Titel:
-			<input type="text" name="titel" value="<?php echo $checkliste["titel"]; ?>">
+			<input type="text" name="titel" value="<?php echo $checkliste["Titel"]; ?>">
 		</label>
 		<label>
-			deadline:
-			<input type="date" name="deadline" value="<?php echo $checkliste["deadline"]; ?>">
+			Deadline:
+			<input type="date" name="deadline" value="<?php echo $checkliste["Deadline"]; ?>">
 		</label>
 
-		<input type="hidden" name="checklisteid" value="<?php echo $checkliste["checklisteid"]; ?>">
+		<input type="hidden" name="checklisteid" value="<?php echo $checkliste["ChecklisteID"]; ?>">
 		<input type="submit" value="Absenden">
 	</form>
 </div>
