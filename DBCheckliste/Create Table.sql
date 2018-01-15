@@ -27,6 +27,7 @@ Vorname VARCHAR(30),
 Nachname VARCHAR(30),
 Kuerzel VARCHAR(4),
 Passwort VARCHAR(40),
+ADMIN bool DEFAULT 0,
 PRIMARY KEY(LehrerID)
 )ENGINE=InnoDB;
 
@@ -45,7 +46,7 @@ PRIMARY KEY(ChecklisteID)
 CREATE TABLE Checklisteneintrag
 (
 ChecklisteneintragID INT NOT NULL AUTO_INCREMENT,
-Abgeharkt Bool DEFAULT 0,
+Abgehakt Bool DEFAULT 0,
 Schueler INT,
 Checkliste INT,
 PRIMARY KEY(ChecklisteneintragID)
