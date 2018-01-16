@@ -25,7 +25,7 @@
 
 <div class="content">
 
-	<h1>Klasse Bearbeiten</h1>
+	<h1>Klasse <?php echo $klasse["Bezeichnung"]; ?> Bearbeiten</h1>
 	<form action="skripte/klasse_bearbeiten.php" method="post">
 		<label>
 			Bezeichnung:

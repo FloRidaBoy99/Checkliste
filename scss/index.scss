@@ -1,36 +1,7 @@
 @import "atoms/table";
+@import "atoms/input";
+@import "atoms/generic";
+@import "atoms/a";
 
 @import "molecules/navigation";
-html {
-
-}
-
-
-.content {
-  text-align: center;
-}
-p
-{
-  position: absolute;
-  bottom: 0;
-  border-style: solid;
-  color: white;
-  background-color: #333;
-}
-input[type=submit] {
-  font-size: 15px;
-  border-radius: 40%;
-  -webkit-transition-duration: 0.4s;
-   transition-duration: 0.4s;
-  &:hover {
-    background-color: #333;
-    color: white;
-  }
-}
-input[type=text] {
-  border: solid 1px;
-  border-radius: 10px;
-  &:focus {
-    background-color: orange;
-  }
-}
+@import "molecules/footer";

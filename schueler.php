@@ -18,11 +18,7 @@
 ?>
 
 <div class="content">
-	<h1>Schüler</h1>
-
-
-
-	<h1>Schüler bearbeiten</h1>
+	<h1>Schüler <?php echo $schueler["Vorname"]." ".$schueler["Nachname"]; ?> bearbeiten</h1>
 	<form action="skripte/schueler_bearbeiten.php" method="post">
 		<label>
 			Vorname:

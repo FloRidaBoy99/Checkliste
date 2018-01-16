@@ -16,10 +16,16 @@ VALUES ('Florian','Kree','1998-01-01','3'),
 
 INSERT INTO Checkliste (Titel,Erstelldatum,Deadline,Lehrer,Klasse)
 VALUES	('Anwesenheit','2018-01-08','2018-01-12','3','3'),
-		('Anwesenheit','2018-01-15','2018-01-19','3','3'),
-		('Anwesenheit','2018-01-22','2018-01-26','3','3');
+		('Hausaufgaben','2018-01-15','2018-01-19','3','3'),
+		('DB Projekt Abgabe','2018-01-22','2018-01-26','3','3');
 
 INSERT INTO Checklisteneintrag (Abgehakt,Schueler,Checkliste)
-VALUES	('1','3','1'),
-		('0','3','2'),
+VALUES	('0','1','1'),
+		('1','2','1'),
+		('0','3','1'),
+		('1','1','2'),
+		('0','2','2'),
+		('1','3','2'),
+		('0','1','3'),
+		('1','2','3'),
 		('0','3','3');

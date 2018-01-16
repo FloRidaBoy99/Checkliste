@@ -9,9 +9,9 @@ ul.oberleiste {
 
 		li a, li {
 		    color: white;
+				cursor: pointer;
 		    text-align: center;
 		    padding: 10px 10px;
-		    text-decoration: none;
 				position: relative;
 				display: inline-block;
 
@@ -25,6 +25,8 @@ ul.oberleiste {
 			position: absolute;
 			top: 0;
 			right: 0;
+			transition: all 0.2s ease-in-out;
+			
       &:hover {
         background-color: orange;
       }
@@ -39,17 +41,18 @@ ul.oberleiste {
 	    background-color: #333;
 			transition: all 0.2s ease-in-out;
       background-color: $navbarfarbe;
+			white-space: nowrap;
 
 			a {
 				color: white;
 				padding: 12px 16px;
-				text-decoration: none;
 				display: block;
-				text-align: left;
 				border: 1px solid;
+				transition: all 0.2s ease-in-out;
+
         &:hover {
-          background-color: lightblue;
-          color: #333;
+          background-color: #474747;
+          color: #fff;
         }
 			}
 		}
