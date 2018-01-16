@@ -21,6 +21,7 @@
 		ON k.istklassenlehrer = l.lehrerid';
 	$klasse = $db -> query($klassen_sql);
 ?>
+<div class="content">
 
 <h1>Alle Klassen</h1>
 <?php if ($klasse -> num_rows > 0): ?>
@@ -65,6 +66,7 @@
 				</tr>
 			<?php endwhile; ?>
 	</table>
+</div>
 <?php endif; ?>
 
 <?php include 'include/footer.php'; ?>

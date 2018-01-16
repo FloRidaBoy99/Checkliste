@@ -7,6 +7,7 @@
 		$klasse = $db -> query($klasse_sql);
 	endif;
 ?>
+<div class="content">
 
 <h1>Neue Checkliste erstellen</h1>
 <form action="skripte/checkliste_neu.php" method="post">
@@ -31,5 +32,6 @@
 
 	<input type="submit" value="Absenden">
 </form>
+</div>
 
 <?php include 'include/footer.php'; ?>

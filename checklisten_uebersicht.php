@@ -28,9 +28,9 @@
 		</div>
 	<?php endif; ?>
 
+	<div class="content">
 	<h1>Alle Checklisten</h1>
 
-	<div class="content">
 		<?php if ($checklisten !== false) : ?>
 			<table>
 				<tr>

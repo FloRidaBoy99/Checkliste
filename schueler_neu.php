@@ -7,7 +7,7 @@
 		$klasse = $db -> query($klasse_sql);
 	endif;
 ?>
-
+<div class="content">
 <h1>Neuen Schüler erstellen</h1>
 <form action="skripte/schueler_neu.php" method="post">
 	<label>
@@ -35,5 +35,5 @@
 
 	<input type="submit" value="Absenden">
 </form>
-
+</div>
 <?php include 'include/footer.php'; ?>

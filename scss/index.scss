@@ -1,3 +1,29 @@
 @import "atoms/table";
 
 @import "molecules/navigation";
+html {
+
+}
+
+
+.content {
+  text-align: center;
+}
+p
+{
+  position: absolute;
+  bottom: 0;
+  border-style: solid;
+  color: white;
+  background-color: #333;
+}
+input[type=submit] {
+  font-size: 15px;
+  border-radius: 40%;
+  -webkit-transition-duration: 0.4s;
+   transition-duration: 0.4s;
+  &:hover {
+    background-color: #333;
+    color: white;
+  }
+}
