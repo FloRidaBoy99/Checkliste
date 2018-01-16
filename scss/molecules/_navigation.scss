@@ -25,6 +25,9 @@ ul.oberleiste {
 			position: absolute;
 			top: 0;
 			right: 0;
+      &:hover {
+        background-color: orange;
+      }
 		}
 
 		.dropdown-inhalt {
@@ -44,6 +47,10 @@ ul.oberleiste {
 				display: block;
 				text-align: left;
 				border: 1px solid;
+        &:hover {
+          background-color: lightblue;
+          color: #333;
+        }
 			}
 		}
 

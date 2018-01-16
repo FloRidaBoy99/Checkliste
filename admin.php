@@ -13,6 +13,7 @@
 
 	<div class="content">
 		<?php if ($lehrer !== false) : ?>
+			<h1>Alle Lehrer</h1>
 			<table>
 				<tr>
 					<th>ID</th>
