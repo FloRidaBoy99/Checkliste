@@ -1,4 +1,4 @@
-/* compiled by scssphp v0.0.12 on Tue, 16 Jan 2018 20:39:02 +0100 (0.03s) */
+/* compiled by scssphp v0.0.12 on Tue, 16 Jan 2018 20:46:16 +0100 (0.023s) */
 
 table {
   margin: 0px auto;
@@ -47,6 +47,14 @@ html, body {
 a {
   text-decoration: none;
   color: #0079e9; }
+
+.alert {
+  width: 40%;
+  margin: auto;
+  background-color: #f32323;
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff; }
 
 ul.oberleiste {
   list-style-type: none;

@@ -33,13 +33,13 @@
 					<a href="klasse_neu.php">Neue Klasse</a>
 				</div>
 		  </li>
-			<?php if ($_SESSION["admin"] === "1"): ?>
+			<?php if (!empty($_SESSION) && $_SESSION["admin"] === "1"): ?>
 				<li class="dropdown">
 					<a href="admin.php">Administration</a>
 			  </li>
 			<?php endif; ?>
 			<li class="logout">
-				<a href="logout.php">Ausloggen</a>
+				<a href="skripte/logout.php">Ausloggen</a>
 			</li>
 		</ul>
 	<?php endif; ?>

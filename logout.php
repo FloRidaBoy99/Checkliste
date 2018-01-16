@@ -1,14 +1,11 @@
-<?php
-	include 'include/head.php';
+<?php include 'include/head.php'; ?>
 
-	session_unset();
-	session_destroy();
-?>
-
+	<div class="content">
 	<?php if (empty($_SESSION)): ?>
 		<h1>Bis bald!</h1>
 	<?php else: ?>
 		<h1>Irgendetwas hat nicht funktioniert :-(</h1>
 	<?php endif; ?>
+</div>
 
 <?php include 'include/footer.php'; ?>
