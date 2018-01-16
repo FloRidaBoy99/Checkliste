@@ -9,8 +9,6 @@
 		$schuelerResult = $db -> query($schueler_sql);
 		$schueler = $schuelerResult -> fetch_assoc();
 
-		print_r($schueler);
-
 		$klasse_sql = "SELECT klasseid, bezeichnung FROM klasse ORDER BY bezeichnung ASC";
 		$klasse = $db -> query($klasse_sql);
 	else :

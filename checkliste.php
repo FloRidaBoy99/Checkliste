@@ -20,8 +20,6 @@
 		$checklisteResult = $db -> query($checkliste_sql);
 		$checkliste = $checklisteResult -> fetch_assoc();
 
-		print_r($checkliste);
-
 	else :
 		header("Location:login.php?msg=".urlencode("Fehler: Sie sind nicht eingeloggt"));
 		exit;

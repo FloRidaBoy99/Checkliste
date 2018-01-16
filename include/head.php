@@ -10,7 +10,7 @@
 		<title>Checkliste</title>
 	</head>
 	<body>
-		<?php print_r($_SESSION); if (strtolower($_SERVER["PHP_SELF"]) !== "/checkliste/login.php") : ?>
+		<?php if (strtolower($_SERVER["PHP_SELF"]) !== "/checkliste/login.php") : ?>
 		<ul class="oberleiste">
 			<li class="dropdown">
 				<a href="checklisten_uebersicht.php">Alle Checklisten</a>

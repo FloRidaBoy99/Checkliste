@@ -3,7 +3,7 @@
 	include 'include/mysql.php';
 
 	if ($db -> checkLogin($_SESSION)) :
-		$lehrer_sql = "SELECT lehrerid, kuerzel FROM lehrer ORDER BY kuerzel ASC";
+		$lehrer_sql = "SELECT lehrerid, vorname, nachname FROM lehrer ORDER BY kuerzel ASC";
 		$lehrer = $db -> query($lehrer_sql);
 	endif;
 ?>
@@ -21,7 +21,7 @@
 		<select name="klassenlehrer">
 			<option value="" selected disabled>Wählen Sie etwas aus</option>
 			<?php while($row = $lehrer -> fetch_assoc()) : ?>
-				<option value="<?php echo $row["lehrerid"]; ?>"><?php echo $row["kuerzel"]; ?></option>
+				<option value="<?php echo $row["lehrerid"]; ?>"><?php echo $row["vorname"]." ".$row["nachname"]; ?></option>
 			<?php endwhile; ?>
 		</select>
 	</label>

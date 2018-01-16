@@ -19,8 +19,6 @@
 
 	$checklisten = $db -> query($checklisten_sql);
 
-	print_r($checklisten);
-
 ?>
 	<?php if (!empty($_GET["msg"])): ?>
 		<div class="alert">

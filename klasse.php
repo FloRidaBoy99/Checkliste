@@ -10,9 +10,7 @@
 		$klasseResult = $db -> query($klasse_sql);
 		$klasse = $klasseResult -> fetch_assoc();
 
-		print_r($klasse);
-
-		$lehrer_sql = "SELECT lehrerid, kuerzel FROM lehrer ORDER BY kuerzel ASC";
+		$lehrer_sql = "SELECT lehrerid, vorname, nachname FROM lehrer ORDER BY kuerzel ASC";
 		$lehrer = $db -> query($lehrer_sql);
 
 		$schueler_sql = "SELECT schuelerid, vorname, nachname FROM schueler WHERE klasse = $id ORDER BY nachname ASC";
@@ -42,7 +40,7 @@
 
 					<option value="<?php echo $row["lehrerid"]; ?>"
 						<?php if ($klasse["istKlassenlehrer"] === $row["lehrerid"]) echo " selected";?>
-					><?php echo $row["kuerzel"]; ?></option>
+					><?php echo $row["vorname"]." ".$row["nachname"]; ?></option>
 
 				<?php endwhile; ?>
 			</select>
