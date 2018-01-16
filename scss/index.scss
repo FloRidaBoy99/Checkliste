@@ -27,3 +27,10 @@ input[type=submit] {
     color: white;
   }
 }
+input[type=text] {
+  border: solid 1px;
+  border-radius: 10px;
+  &:focus {
+    background-color: orange;
+  }
+}

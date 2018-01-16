@@ -1,4 +1,4 @@
-/* compiled by scssphp v0.0.12 on Tue, 16 Jan 2018 15:29:10 +0100 (0.0062s) */
+/* compiled by scssphp v0.0.12 on Tue, 16 Jan 2018 16:09:48 +0100 (0.0065s) */
 
 table {
   margin: 0px auto;
@@ -66,3 +66,9 @@ input[type=submit] {
   input[type=submit]:hover {
     background-color: #333;
     color: white; }
+
+input[type=text] {
+  border: solid 1px;
+  border-radius: 10px; }
+  input[type=text]:focus {
+    background-color: orange; }
