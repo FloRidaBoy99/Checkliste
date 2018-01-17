@@ -24,8 +24,30 @@
 
 
 <div class="content">
+	<h1>Klasse <?php echo $klasse["Bezeichnung"]; ?></h1>
+	<h2>Alle Schüler der Klasse</h2>
+	<?php if ($schueler -> num_rows > 0): ?>
+		<table>
+			<tr>
+				<th>Nr.</th>
+				<th>Nachname</th>
+				<th>Vorname</th>
+				<th>Extras</th>
+			</tr>
+			<?php $i = 1; while ($row = $schueler -> fetch_assoc()) : ?>
+				<tr>
+					<td><?php echo $i; $i++; ?></td>
+					<td><?php echo $row["nachname"] ?></td>
+					<td><?php echo $row["vorname"] ?></td>
+					<td><?php if ($klasse["istKlassensprecher"] === $row["schuelerid"]) { echo "Klassensprecher"; } ?></td>
+				</tr>
+			<?php endwhile; ?>
+		</table>
+	<?php else: ?>
+		<p>Sie haben noch keine Schüler hinzugefügt.</p>
+	<?php endif; ?>
 
-	<h1>Klasse <?php echo $klasse["Bezeichnung"]; ?> Bearbeiten</h1>
+	<h2>Klasse <?php echo $klasse["Bezeichnung"]; ?> Bearbeiten</h2>
 	<form action="skripte/klasse_bearbeiten.php" method="post">
 		<label>
 			Bezeichnung:
@@ -50,7 +72,8 @@
 			Klassensprecher:
 			<select name="klassensprecher">
 				<option value="" selected disabled>Wählen Sie einen Schüler aus</option>
-				<?php while($row = $schueler -> fetch_assoc()) : ?>
+				<?php $schueler -> data_seek(0);
+					while($row = $schueler -> fetch_assoc()) : ?>
 
 					<option value="<?php echo $row["schuelerid"]; ?>"
 						<?php if ($klasse["istKlassensprecher"] === $row["schuelerid"]) echo " selected";?>
@@ -64,7 +87,7 @@
 	</form>
 
 
-	<h1>Klasse <?php echo $klasse["Bezeichnung"]; ?> Löschen</h1>
+	<h2>Klasse <?php echo $klasse["Bezeichnung"]; ?> Löschen</h2>
 	<form action="skripte/klasse_loeschen.php" method="post">
 		<input type="hidden" name="bezeichnung" value="<?php echo $klasse["Bezeichnung"]?>">
 		<input type="hidden" name="klasseid" value="<?php echo $klasse["KlasseID"]; ?>">

@@ -10,8 +10,8 @@
 	$checklisten_sql = "SELECT
 	c.checklisteid,
 	c.titel,
-	c.erstelldatum,
-	c.deadline,
+	DATE_FORMAT(c.erstelldatum, '%d.%m.%Y') AS erstelldatum,
+	DATE_FORMAT(c.deadline, '%d.%m.%Y') AS deadline,
 	k.bezeichnung,
 	IF(status = 0, 'Noch nicht fertig', 'Fertig') AS status
 	FROM checkliste c INNER JOIN klasse k

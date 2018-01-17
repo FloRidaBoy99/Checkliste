@@ -1,6 +1,10 @@
 label {
-	display: block;
-	margin: 0.5% auto;
+	
+	&::after {
+		display: block;
+		content: "";
+		margin: 0.5% auto;
+	}
 
 	input, select {
 	  border: 1px solid grey;

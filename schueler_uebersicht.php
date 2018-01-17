@@ -8,7 +8,7 @@
 			s.schuelerid,
 			s.vorname,
 			s.nachname,
-			s.geburtsdatum,
+			DATE_FORMAT(s.geburtsdatum, "%d.%m.%Y") AS geburtsdatum,
 			k.bezeichnung
 			FROM
 			schueler s LEFT JOIN klasse k
@@ -27,10 +27,10 @@
 		<table>
 			<tr>
 				<th>Nr.</th>
-				<td>Nachname</td>
-				<td>Vorname</td>
-				<td>Geburtsdatum</td>
-				<td>Klasse</td>
+				<th>Nachname</th>
+				<th>Vorname</th>
+				<th>Geburtsdatum</th>
+				<th>Klasse</th>
 			</tr>
 			<?php $i = 1; while ($row = $schueler -> fetch_assoc()) : ?>
 				<tr>

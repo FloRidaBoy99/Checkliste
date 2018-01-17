@@ -1,4 +1,4 @@
-/* compiled by scssphp v0.0.12 on Tue, 16 Jan 2018 20:46:16 +0100 (0.023s) */
+/* compiled by scssphp v0.0.12 on Wed, 17 Jan 2018 19:35:04 +0100 (0.03s) */
 
 table {
   margin: 0px auto;
@@ -10,8 +10,9 @@ table {
   table td:first-of-type {
     text-align: center; }
 
-label {
+label::after {
   display: block;
+  content: "";
   margin: 0.5% auto; }
   label input, label select {
     border: 1px solid grey;
@@ -44,6 +45,9 @@ html, body {
 .content {
   text-align: center; }
 
+* {
+  box-sizing: border-box; }
+
 a {
   text-decoration: none;
   color: #0079e9; }
@@ -63,11 +67,12 @@ ul.oberleiste {
   background-color: #333;
   width: 100%;
   position: relative; }
+  ul.oberleiste a {
+    padding: 20px; }
   ul.oberleiste li a, ul.oberleiste li {
     color: white;
     cursor: pointer;
     text-align: center;
-    padding: 10px 10px;
     position: relative;
     display: inline-block; }
     ul.oberleiste li a:hover .dropdown-inhalt, ul.oberleiste li:hover .dropdown-inhalt {

@@ -33,6 +33,11 @@
 		{
 			return $this -> verbindung -> insert_id;
 		}
+
+		public function getConn()
+		{
+			return $this -> verbindung;
+		}
 	}
 
 	$db = new DB(array(

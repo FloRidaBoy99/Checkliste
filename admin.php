@@ -10,6 +10,11 @@
 	}
 
 ?>
+	<?php if(!empty($_GET["msg"])) : ?>
+		<div class="alert">
+			<?php echo $_GET["msg"]; ?>
+		</div>
+	<?php endif; ?>
 
 	<div class="content">
 		<?php if ($lehrer !== false) : ?>
