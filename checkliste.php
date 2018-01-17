@@ -66,7 +66,7 @@
 		</form>
 	<?php endif; ?>
 
-	<h1>Checkliste bearbeiten</h1>
+	<h1>Checkliste <?php echo $checkliste["Titel"]; ?> bearbeiten</h1>
 	<form action="skripte/checkliste_bearbeiten.php" method="post">
 		<label>
 			Titel:
@@ -80,7 +80,14 @@
 		<input type="hidden" name="checklisteid" value="<?php echo $checkliste["ChecklisteID"]; ?>">
 		<input type="submit" value="Absenden">
 	</form>
+
+	<h1>Checkliste <?php echo $checkliste["Titel"]; ?> löschen</h1>
+	<form action="skripte/checkliste_loeschen.php" method="post">
+		<input type="hidden" name="checklisteid" value="<?php echo $checkliste["ChecklisteID"]; ?>">
+		<input type="submit" value="Löschen">
+	</form>
 </div>
+
 
 
 <?php include 'include/footer.php'; ?>

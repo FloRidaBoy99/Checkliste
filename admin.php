@@ -20,6 +20,7 @@
 					<th>Vorname</th>
 					<th>Nachname</th>
 					<th>Kuerzel</th>
+					<th>Bearbeiten</th>
 				</tr>
 				<?php while ($row = $lehrer -> fetch_assoc()) : ?>
 					<tr>
@@ -27,6 +28,12 @@
 						<td><?php echo $row["vorname"]; ?></td>
 						<td><?php echo $row["nachname"]; ?></td>
 						<td><?php echo $row["kuerzel"]; ?></td>
+						<td>
+							<form action="skripte/lehrer_loeschen.php" method="post">
+								<input type="hidden" name="lehrerid" value="<?php echo $row["lehrerid"]; ?>">
+								<input type="submit" value="Löschen">
+							</form>
+						</td>
 					</tr>
 				<?php endwhile; ?>
 			</table>
