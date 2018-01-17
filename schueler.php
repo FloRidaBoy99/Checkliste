@@ -47,6 +47,14 @@
 		<input type="hidden" name="schuelerid" value="<?php echo $schueler["SchuelerID"]; ?>">
 		<input type="submit" value="Absenden">
 	</form>
+
+
+	<h1>Schüler <?php echo $schueler["Vorname"]." ".$schueler["Nachname"]; ?> Löschen</h1>
+	<form action="skripte/schueler_loeschen.php" method="post">
+		<input type="hidden" name="schuelerid" value="<?php echo $schueler["SchuelerID"]; ?>">
+		<input type="submit" value="Absenden">
+	</form>
+
 </div>
 
 

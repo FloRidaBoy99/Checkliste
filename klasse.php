@@ -63,6 +63,16 @@
 		<input type="submit" value="Absenden">
 	</form>
 
+
+	<h1>Klasse <?php echo $klasse["Bezeichnung"]; ?> Löschen</h1>
+	<form action="skripte/klasse_loeschen.php" method="post">
+		<input type="hidden" name="bezeichnung" value="<?php echo $klasse["Bezeichnung"]?>">
+		<input type="hidden" name="klasseid" value="<?php echo $klasse["KlasseID"]; ?>">
+		<input type="submit" value="Löschen">
+	</form>
+
+
+
 </div>
 
 
