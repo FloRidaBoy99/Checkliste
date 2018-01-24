@@ -5,9 +5,9 @@
 		private $verbindung;
 
 		function __construct($options) {
-			$this -> verbindung = new mysqli($options["servername"], $options["username"], $options["password"], $options["dbname"]);
+			@$this -> verbindung = new mysqli($options["servername"], $options["username"], $options["password"], $options["dbname"]);
 			if ($this -> verbindung ->connect_error) {
-			    die("Die MySQL Verbindung funzt net: " . $this -> verbindung -> connect_error);
+			    die("Etwas funktioniert nicht");
 			}
 		}
 
