@@ -6,7 +6,9 @@
 	$password = $_POST["password"];
 	$kuerzel = $_POST["kuerzel"];
 
-	$sql = "INSERT INTO lehrer (vorname, nachname, passwort, kuerzel) VALUES ('$vorname', '$nachname', '$password', '$kuerzel')";
+ $hash = password_hash($password, PASSWORD_DEFAULT);
+
+	$sql = "INSERT INTO lehrer (vorname, nachname, passwort, kuerzel) VALUES ('$vorname', '$nachname', '$hash', '$kuerzel')";
 
 	$erg = $db -> query($sql);
 

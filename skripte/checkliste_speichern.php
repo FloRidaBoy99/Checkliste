@@ -48,7 +48,7 @@
 		$status = $db -> query($status_sql);
 	}
 
-	header("Location:../checkliste.php?id=".$checkliste);
+	header("Location:../checklisten_uebersicht.php");
 
 
 ?>

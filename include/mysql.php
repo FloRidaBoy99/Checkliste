@@ -19,7 +19,7 @@
 		public function checkLogin($data) {
 			if (empty($data)) { return false; }
 
-			$sql = "SELECT * FROM lehrer WHERE lehrerid = ".$data["lehrerid"]." AND passwort = '".$data["passwort"]."' AND kuerzel = '".$data["kuerzel"]."'";
+			$sql = "SELECT * FROM lehrer WHERE lehrerid = ".$data["lehrerid"]." AND kuerzel = '".$data["kuerzel"]."'";
 			$result = $this -> verbindung -> query($sql);
 
 			if ($result !== NULL && $result -> num_rows === 1) {
