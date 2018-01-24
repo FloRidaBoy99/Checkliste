@@ -7,7 +7,7 @@
 		<meta name="author" content="Florian Kry, Lukas Küster, Niklas Grimm, Alexander Stein" />
 		<meta charset="utf-8" />
 		<link rel="stylesheet" type="text/css" href="style.php/index.scss" />
-		
+
 		<?php if (strpos($_SERVER["PHP_SELF"], "logout.php") !== false) : ?>
   		<meta http-equiv="refresh" content="2; URL=login.php" />
 		<?php endif; ?>
@@ -15,7 +15,11 @@
 		<title>Checkliste</title>
 	</head>
 	<body>
-		<?php if (strpos($_SERVER["PHP_SELF"], "login.php") === false) : ?>
+		<?php
+		$loginPage = strpos($_SERVER["PHP_SELF"], "login.php");
+		$indexPage = strpos($_SERVER["PHP_SELF"], "index.php");
+		
+		if ($loginPage === false && $indexPage === false) : ?>
 		<ul class="oberleiste">
 			<li class="dropdown">
 				<a href="checklisten_uebersicht.php">Alle Checklisten</a>
