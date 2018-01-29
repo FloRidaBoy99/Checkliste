@@ -21,8 +21,8 @@
 			<input type="password" name="passwort">
 		</label>
 
-		<input type="submit" value="Absenden">
+		<input type="submit" value="Login">
+		<a href="lehrer_registrieren.php"><button type="button" name="button" id="buttonRegistrieren">Registrieren</button></a>
 	</form>
-
 </div>
 <?php include 'include/footer.php'; ?>

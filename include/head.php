@@ -18,8 +18,9 @@
 		<?php
 		$loginPage = strpos($_SERVER["PHP_SELF"], "login.php");
 		$indexPage = strpos($_SERVER["PHP_SELF"], "index.php");
-		
-		if ($loginPage === false && $indexPage === false) : ?>
+		$RegistrierenPage = strpos($_SERVER["PHP_SELF"], "lehrer_registrieren.php");
+
+		if ($loginPage === false && $indexPage === false && $RegistrierenPage === false) : ?>
 		<ul class="oberleiste">
 			<li class="dropdown">
 				<a href="checklisten_uebersicht.php">Alle Checklisten</a>
@@ -42,6 +43,7 @@
 					<a href="klasse_neu.php">Neue Klasse</a>
 				</div>
 		  </li>
+
 			<?php if (!empty($_SESSION) && $_SESSION["admin"] === "1"): ?>
 				<li class="dropdown">
 					<a href="admin.php">Administration</a>

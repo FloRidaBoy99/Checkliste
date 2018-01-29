@@ -1,5 +1,5 @@
 label {
-	
+
 	&::after {
 		display: block;
 		content: "";
@@ -18,14 +18,14 @@ label {
 	}
 }
 
-input[type=submit] {
+input[type=submit], #buttonRegistrieren {
 	font-size: 15px;
 	background-color: #333;
 	color: #fff;
 	padding: 8px 15px;
 	border: none;
 	transition: all 0.2s ease-in-out;
-
+	margin-top: 0.5%;
 	&:hover {
 		background-color: #4b4b4b;
 		color: white;

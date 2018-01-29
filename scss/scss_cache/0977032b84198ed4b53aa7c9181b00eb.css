@@ -1,4 +1,4 @@
-/* compiled by scssphp v0.0.12 on Wed, 24 Jan 2018 11:51:20 +0100 (0.3351s) */
+/* compiled by scssphp v0.0.12 on Mon, 29 Jan 2018 10:25:58 +0100 (0.0312s) */
 
 table {
   margin: 0px auto 1% auto;
@@ -22,14 +22,15 @@ label::after {
     label input:focus, label select:focus {
       box-shadow: 0px 0px 2px #000; }
 
-input[type=submit] {
+input[type=submit], #buttonRegistrieren {
   font-size: 15px;
   background-color: #333;
   color: #fff;
   padding: 8px 15px;
   border: none;
-  transition: all 0.2s ease-in-out; }
-  input[type=submit]:hover {
+  transition: all 0.2s ease-in-out;
+  margin-top: 0.5%; }
+  input[type=submit]:hover, #buttonRegistrieren:hover {
     background-color: #4b4b4b;
     color: white;
     cursor: pointer;
@@ -54,7 +55,7 @@ a {
 
 .alert {
   width: 40%;
-  margin: auto;
+  margin: 1% auto;
   background-color: #f32323;
   padding: 10px;
   border-radius: 5px;
