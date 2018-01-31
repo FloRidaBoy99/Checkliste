@@ -1,9 +1,8 @@
 INSERT INTO Lehrer (Vorname,Nachname,Kuerzel,Passwort,Admin)
-VALUES ('Martin','Mog','MOG','Mog123','0'),
-		('Christoph','Töller','TOEL','Töller123','0'),
-		('Joachim','Spitz','SPIT','Spitz123','0'),
-		('Sexy','Administrator','ADM','12345','1');
-
+VALUES ('Martin','Mog','MOG','$2y$10$ltwpcrCQjZE837Rr80jaI.eAt6mY6oQZTtOCMp9bg/VFqzMhunB4K','0'),
+		('Sexy','Administrator','ADM','$2y$10$sJ0a5hwNnwfHGHEI.AyBzOghZtp46oJz43MjPvStais7Ahr5asgoW','1');
+--Mog123
+-- 12345
 INSERT INTO Klasse (Bezeichnung, istklassenlehrer)
 VALUES 	('AIF11','1'),
 ('AIF21','2'),

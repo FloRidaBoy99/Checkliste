@@ -1,5 +1,6 @@
 <?php
 	include '../include/mysql.php';
+	require '../include/password.php';
 
 	$vorname = $_POST["vorname"];
 	$nachname = $_POST["nachname"];

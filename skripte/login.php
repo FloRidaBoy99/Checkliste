@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	include '../include/mysql.php';
+	require '../include/password.php';
 
 	$kuerzel = $_POST["kuerzel"];
 	$passwort = $_POST["passwort"];

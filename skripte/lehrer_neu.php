@@ -1,8 +1,10 @@
 <?php
+	session_start();
 	include '../include/mysql.php';
+	require '../include/password.php';
 
 	if (!$db -> checkLogin($_SESSION) && $_SESSION["admin"] !== "1") {
-		header("Location:checklisten_uebersicht.php?msg=".urlencode("Fehler: Sie besitzen nicht die nötigen Rechte"));
+		header("Location:../checklisten_uebersicht.php?msg=".urlencode("Fehler: Sie besitzen nicht die nötigen Rechte"));
 		exit;
 	}
 

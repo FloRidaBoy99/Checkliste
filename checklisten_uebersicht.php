@@ -15,7 +15,8 @@
 	k.bezeichnung,
 	IF(status = 0, 'Noch nicht fertig', 'Fertig') AS status
 	FROM checkliste c INNER JOIN klasse k
-	ON c.klasse = k.klasseid;";
+	ON c.klasse = k.klasseid
+	WHERE c.lehrer = '".$_SESSION["lehrerid"]."'";
 
 	$checklisten = $db -> query($checklisten_sql);
 
