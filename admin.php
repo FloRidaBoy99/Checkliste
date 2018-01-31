@@ -56,7 +56,7 @@
 			</label>
 			<label>
 				Passwort:
-				<input type="password" name="password">
+				<input type="password" name="passwort">
 			</label>
 			<label>
 				Kürzel:

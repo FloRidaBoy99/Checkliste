@@ -10,7 +10,7 @@
 		<?php echo $_GET["msg"]; ?>
 	</div>
 <?php endif; ?>
-<form action="skripte/schueler_neu.php" method="post">
+<form action="skripte/lehrer_registrieren.php" method="post">
 	<label>
 		Vorname:
 		<input type="text" name="vorname" value="">
