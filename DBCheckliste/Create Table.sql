@@ -26,7 +26,7 @@ LehrerID INT NOT NULL AUTO_INCREMENT,
 Vorname VARCHAR(30),
 Nachname VARCHAR(30),
 Kuerzel VARCHAR(4),
-Passwort VARCHAR(40),
+Passwort VARCHAR(255),
 Admin bool DEFAULT 0,
 PRIMARY KEY(LehrerID)
 )ENGINE=InnoDB;
