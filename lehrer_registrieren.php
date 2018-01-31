@@ -5,6 +5,11 @@
 ?>
 <div class="content">
 <h1>Registrieren eines neuen Lehrers</h1>
+<?php if(!empty($_GET["msg"])) : ?>
+	<div class="alert">
+		<?php echo $_GET["msg"]; ?>
+	</div>
+<?php endif; ?>
 <form action="skripte/schueler_neu.php" method="post">
 	<label>
 		Vorname:
@@ -22,10 +27,11 @@
     Passwort:
     <input type="password" name="passwort" value="">
 	</label>
-		<label>passwort bestätigen
+	<label>
+		Passwort bestätigen
 		 <input type="password" name="passwort2" value="">
 	 </label>
-	<input type="submit" value="Absenden">
+		<input type="submit" value="Absenden">
 </form>
 </div>
 <?php include 'include/footer.php'; ?>
