@@ -20,7 +20,11 @@
 	</label>
   <label>
     Passwort:
-    <input type="password" name="passwort" value=""> </label>
+    <input type="password" name="passwort" value="">
+	</label>
+		<label>passwort bestätigen
+		 <input type="password" name="passwort2" value="">
+	 </label>
 	<input type="submit" value="Absenden">
 </form>
 </div>
