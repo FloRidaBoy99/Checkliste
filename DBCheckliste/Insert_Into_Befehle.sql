@@ -5,8 +5,8 @@ VALUES ('Martin','Mog','MOG','$2y$10$ltwpcrCQjZE837Rr80jaI.eAt6mY6oQZTtOCMp9bg/V
 -- 12345
 INSERT INTO Klasse (Bezeichnung, istklassenlehrer)
 VALUES 	('AIF11','1'),
-('AIF21','2'),
-('AIF31','3');
+('AIF21','1'),
+('AIF31','1');
 
 INSERT INTO Schueler (Vorname, Nachname,Geburtsdatum,Klasse)
 VALUES ('Florian','Kree','1998-01-01','3'),
@@ -14,9 +14,9 @@ VALUES ('Florian','Kree','1998-01-01','3'),
 		('Alexander','Stein','1998-01-03','3');
 
 INSERT INTO Checkliste (Titel,Erstelldatum,Deadline,Lehrer,Klasse)
-VALUES	('Anwesenheit','2018-01-08','2018-01-12','3','3'),
-		('Hausaufgaben','2018-01-15','2018-01-19','3','3'),
-		('DB Projekt Abgabe','2018-01-22','2018-01-26','3','3');
+VALUES	('Anwesenheit','2018-01-08','2018-01-12','1','3'),
+		('Hausaufgaben','2018-01-15','2018-01-19','1','3'),
+		('DB Projekt Abgabe','2018-01-22','2018-01-26','1','3');
 
 INSERT INTO Checklisteneintrag (Abgehakt,Schueler,Checkliste)
 VALUES	('0','1','1'),

@@ -1,4 +1,4 @@
-/* compiled by scssphp v0.0.12 on Mon, 29 Jan 2018 10:25:58 +0100 (0.0312s) */
+/* compiled by scssphp v0.0.12 on Wed, 07 Feb 2018 12:05:40 +0100 (0.05s) */
 
 table {
   margin: 0px auto 1% auto;
@@ -75,10 +75,13 @@ ul.oberleiste {
     cursor: pointer;
     text-align: center;
     position: relative;
-    display: inline-block; }
+    display: inline-block;
+    transition: all 0.2s ease-in-out; }
     ul.oberleiste li a:hover .dropdown-inhalt, ul.oberleiste li:hover .dropdown-inhalt {
       opacity: 1;
       visibility: visible; }
+    ul.oberleiste li a:hover, ul.oberleiste li:hover {
+      background-color: orange; }
   ul.oberleiste .logout {
     position: absolute;
     top: 0;
